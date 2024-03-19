@@ -12,7 +12,9 @@ html {
 }
 
 body {
+  background: #222222;
   position: relative;
   min-height: 50%;
   padding-bottom: 5em;
+  color: #fff;
 }

@@ -14,4 +14,8 @@ export class BoxesService {
   getBoxes(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl)
   }
+
+  addToCart(id: number) {
+    return this.http.post('/panier', { id_box: id})
+  }
 }

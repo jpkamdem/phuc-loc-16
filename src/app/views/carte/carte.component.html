@@ -1,8 +1,15 @@
 <div *ngFor="let box of boxes">
     <div class="box">
-        <h2> {{box.nom}} </h2>
-        <p> {{box.pieces}} </p>
-        <p> {{box.prix}} </p>
-        <p> {{ box.image }} </p>
+        <h1> {{ box.nom }} </h1>
+        <h3 class="price"> {{box.prix}} </h3>
+        <div class="add-delete">
+            <button class="cart" (click)="addToCart(box.id)"> Ajouter au panier </button>
+            <button class="cart"> Supprimer du panier </button>
+        </div>
     </div>
+</div>
+<div class="panier-overlay">
+    <h1>Panier</h1>
+    <button>Valider</button>
+    <button>Annuler</button>
 </div>

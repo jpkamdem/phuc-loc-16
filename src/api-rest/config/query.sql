@@ -169,16 +169,7 @@ VALUES
         13
     );
 
-CREATE TABLE IF NOT EXISTS Box_Saveurs (
-    id_box INT,
-    id_saveur INT
-);
-
-CREATE TABLE IF NOT EXISTS Box_Aliments (
-    id_box INT,
-    id_aliment INT,
-    quantite INT(11)
-);
+CREATE TABLE IF NOT EXISTS Box_Saveurs (id_box INT, id_saveur INT);
 
 INSERT INTO
     Box_Saveurs (id_box, id_saveur)
@@ -243,6 +234,12 @@ VALUES
     (13, 5),
     (13, 2),
     (13, 3);
+
+CREATE TABLE IF NOT EXISTS Box_Aliments (
+    id_box INT,
+    id_aliment INT,
+    quantite INT(11)
+);
 
 INSERT INTO
     Box_Aliments (id_box, id_aliment, quantite)
@@ -318,3 +315,8 @@ VALUES
     (13, 24, 4),
     (13, 22, 2),
     (13, 5, 1);
+
+CREATE TABLE IF NOT EXISTS Panier (
+    id_panier INT PRIMARY KEY AUTO_INCREMENT,
+    id_box INT(11),
+)
