@@ -1,0 +1,25 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Base de donnée pour projet phuc-loc-restaurant",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpkamdem/phuc-loc-16.git"
+  },
+  "author": "jipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpkamdem/phuc-loc-16/issues"
+  },
+  "homepage": "https://github.com/jpkamdem/phuc-loc-16#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expressjs": "^1.0.1",
+    "mysql": "^2.18.1"
+  }
+}

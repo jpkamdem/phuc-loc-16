@@ -10,6 +10,7 @@ import { CarteComponent } from './views/carte/carte.component';
 import { InfosComponent } from './views/infos/infos.component';
 import { PanierComponent } from './views/panier/panier.component';
 import { NotfoundComponent } from './views/notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NotfoundComponent } from './views/notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

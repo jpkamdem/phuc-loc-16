@@ -1,1 +1,8 @@
-<p>carte works!</p>
+<div *ngFor="let box of boxes">
+    <div class="box">
+        <h2> {{box.nom}} </h2>
+        <p> {{box.pieces}} </p>
+        <p> {{box.prix}} </p>
+        <p> {{ box.image }} </p>
+    </div>
+</div>
