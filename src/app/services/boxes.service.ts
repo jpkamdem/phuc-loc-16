@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BoxesService {
+  getBoxesUrl = 'http://localhost:3000/api/getboxes/';
+  addToCartUrl = 'http://localhost:3000/api/cart/';
 
-  apiUrl = "http://localhost:3000/api/getboxes/"
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getBoxes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl)
+    return this.http.get<any[]>(this.getBoxesUrl);
   }
 
-  addToCart(id: number) {
-    return this.http.post('/panier', { id_box: id})
+  addToCart(id_box: number): Observable<any> {
+    return this.http.post<any>(`${this.addToCartUrl}`, { id_box: id_box });
   }
 }

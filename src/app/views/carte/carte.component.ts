@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoxesService } from '../../services/boxes.service';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'carte',
@@ -22,15 +23,30 @@ export class CarteComponent implements OnInit {
     });
   }
 
-  addToCart(id: number) {
-    console.log('Id :', id)
-    this.boxesService.addToCart(id).subscribe((res) => {
-      console.log('Box ajoutée au panier avec succès !');
-      // maj dom
-    },
-    err => {
+  // async addToCart(id: number) {
+  //   try {
+  //     const res = await new Promise((resolve, reject) => {
+  //       this.boxesService.addToCart(id).subscribe({
+  //         next: (response) => {
+  //           resolve(response)
+  //         },
+  //         error: (err) => {
+  //           console.error('Erreur lors de l\'ajout de la box au panier :', err)
+  //           reject(err)
+  //         }
+  //       })
+  //     })
+  //     console.log('Box ajoutée au panier avec succès')
+  //   } catch (err) {
+  //     console.error('Erreur lors de l\ajout de la box au panier :', err)
+  //   }
+  // }
+  async addToCart(id: number) {
+    try {
+      await this.boxesService.addToCart(id).toPromise()
+      console.log('Box ajoutée au panier avec succès')
+    } catch (err) {
       console.error('Erreur lors de l\'ajout de la box au panier :', err)
-      // Message d'erreur
-    });
+    }
   }
 }

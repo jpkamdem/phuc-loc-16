@@ -1,14 +1,16 @@
 const connection = require("./../config/database.js");
 
 const addToCart = (id) => {
-    const sqlQuery = `INSERT INTO Table (id_box) VALUES (${id})`
+    console.log(id)
+    const sqlQuery = `INSERT INTO Panier (id_box) VALUES (${id.id_box})`
 
     connection.query(sqlQuery, (err, res) => {
         if (err) {
             console.log('Erreur dans la requête d\'insertion :', err)
-            res.status(500).json({ error: 'Erreur dans la requête d\'insertion'})
             return
         }
         alert('Box ajoutée avec succès.')
     })
 }
+
+module.exports = { addToCart }
